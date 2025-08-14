@@ -32,12 +32,10 @@ python -m venv venv
 
 ### 4. Install Dependencies
 
-Install all required packages from the `requirements.txt` file.
+Install all required packages
 
 ```bash
 pip install django djangorestframework requests
-# Note: You can freeze your dependencies for others to use:
-# pip freeze > requirements.txt
 ```
 
 ### 5. Apply Database Migrations
@@ -77,6 +75,7 @@ All endpoints are available under the `/api/` prefix.
 - **Endpoint**: `GET /api/planets/`
 - **Description**: Retrieves a list of all planets, ordered by name.
 - **`curl` Example**:
+
   ```bash
   curl http://127.0.0.1:8000/api/planets/
   ```
@@ -86,6 +85,7 @@ All endpoints are available under the `/api/` prefix.
 - **Endpoint**: `GET /api/planets/{id}/`
 - **Description**: Retrieves a single planet by its unique ID.
 - **`curl` Example**:
+
   ```bash
   curl http://127.0.0.1:8000/api/planets/1/
   ```
@@ -95,6 +95,7 @@ All endpoints are available under the `/api/` prefix.
 - **Endpoint**: `POST /api/planets/`
 - **Description**: Creates a new planet. Provide climate and terrain names in the `_input` fields. New `Climate` and `Terrain` objects will be created automatically if they don't already exist.
 - **`curl` Example**:
+
   ```bash
   curl -X POST http://127.0.0.1:8000/api/planets/ \
   -H "Content-Type: application/json" \
@@ -106,6 +107,7 @@ All endpoints are available under the `/api/` prefix.
 - **Endpoint**: `PUT /api/planets/{id}/`
 - **Description**: Performs a full update on a planet. All required fields must be provided. The planet's climates and terrains will be replaced with the new lists.
 - **`curl` Example**:
+
   ```bash
   curl -X PUT http://127.0.0.1:8000/api/planets/1/ \
   -H "Content-Type: application/json" \
@@ -117,6 +119,7 @@ All endpoints are available under the `/api/` prefix.
 - **Endpoint**: `PATCH /api/planets/{id}/`
 - **Description**: Performs a partial update on a planet. Only include the fields you want to change.
 - **`curl` Example**:
+
   ```bash
   curl -X PATCH http://127.0.0.1:8000/api/planets/1/ \
   -H "Content-Type: application/json" \
@@ -128,6 +131,7 @@ All endpoints are available under the `/api/` prefix.
 - **Endpoint**: `DELETE /api/planets/{id}/`
 - **Description**: Permanently deletes a planet from the database.
 - **`curl` Example**:
+
   ```bash
   curl -X DELETE http://127.0.0.1:8000/api/planets/1/
   ```
